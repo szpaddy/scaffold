@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scaffold.core.demo.dao.IUserDao">
+	<resultMap type="com.scaffold.core.demo.entity.User" id="userMap">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="age" column="age" />
+		<result property="address" column="address" />
+	</resultMap>
+
+	<select id="getUserList" resultType="java.util.List" resultMap="userMap">
+		select * from users
+	</select>
+
+	<select id="getUserByUid" parameterType="string" resultType="com.scaffold.core.demo.entity.User">
+		select * from users where id=#{id}
+	</select>
+
+
+</mapper>
