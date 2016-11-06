@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.scaffold.core.demo.dao.IUserDao">
-	<resultMap type="com.scaffold.core.demo.entity.User" id="userMap">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.scaffold.demo.dao.IUserDao">
+	<resultMap type="com.scaffold.common.vo.User" id="userMap">
 		<id property="id" column="id" />
 		<result property="name" column="name" />
 		<result property="age" column="age" />
@@ -13,7 +12,7 @@
 		select * from users
 	</select>
 
-	<select id="getUserByUid" parameterType="string" resultType="com.scaffold.core.demo.entity.User">
+	<select id="getUserByUid" parameterType="string" resultType="com.scaffold.common.vo.User">
 		select * from users where id=#{id}
 	</select>
 

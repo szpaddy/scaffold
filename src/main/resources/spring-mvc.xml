@@ -8,7 +8,7 @@
 	<description>Spring MVC Configuration</description>
 
 	<!-- 扫描spring-mvc相关的controller -->
-	<context:component-scan base-package="com.scaffold.core">
+	<context:component-scan base-package="${filter_base-package}">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController" />
 	</context:component-scan>

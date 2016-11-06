@@ -58,6 +58,16 @@
 		<url-pattern>/druid/*</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>environmentServlet</servlet-name>
+		<servlet-class>com.scaffold.common.servlet.DelegatingServletProxy</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>environmentServlet</servlet-name>
+		<url-pattern>/servlet/environment</url-pattern>
+	</servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>

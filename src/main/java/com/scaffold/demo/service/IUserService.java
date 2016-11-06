@@ -1,8 +1,8 @@
-package com.scaffold.core.demo.service;
+package com.scaffold.demo.service;
 
 import java.util.List;
 
-import com.scaffold.core.demo.entity.User;
+import com.scaffold.common.vo.User;
 
 public interface IUserService {
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>demo</title>
+<script type="text/javascript" src="servlet/environment"></script>
+<script type="text/javascript" src="./third-party/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="./js/common/permission.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#userName").text(environment.user.name);
+
+		var permissionList = $.map(environment.permissionList, function(item) {
+			return item.name;
+		});
+		$("#allPermission").text(permissionList.join(","));
+	});
+</script>
+</head>
+<body>
+	<h2>demo</h2>
+	<div>
+		<h3>用户信息</h3>
+		<ul>
+			<li>用户名：<span id="userName"></span></li>
+			<li>拥有的权限:<span id="allPermission"></span></li>
+		</ul>
+	</div>
+	<div>
+		<h3>权限控制</h3>
+		<span>
+			<ul>
+				<li>无权限控制</li>
+				<li>
+					<ul>
+						<li>查看</li>
+						<li>新增</li>
+						<li>删除</li>
+					</ul>
+				</li>
+				<li>有权限控制</li>
+				<li>
+					<ul>
+						<li permission="view">查看</li>
+						<li permission="add">新增</li>
+						<li permission="del">删除</li>
+					</ul>
+				</li>
+			</ul>
+		</span>
+	</div>
+</body>
+</html>

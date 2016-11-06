@@ -1,4 +1,4 @@
-package com.scaffold.core.demo.service.impl;
+package com.scaffold.demo.service.impl;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.scaffold.core.demo.dao.IUserDao;
-import com.scaffold.core.demo.entity.User;
-import com.scaffold.core.demo.service.IUserService;
+import com.scaffold.common.vo.User;
+import com.scaffold.demo.dao.IUserDao;
+import com.scaffold.demo.service.IUserService;
 
 @Service
 public class UserService implements IUserService {

@@ -1,4 +1,4 @@
-package com.scaffold.core.demo.controller;
+package com.scaffold.demo.controller;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.scaffold.core.demo.entity.User;
-import com.scaffold.core.demo.service.IUserService;
+import com.scaffold.common.vo.User;
+import com.scaffold.demo.service.IUserService;
 
 @RestController
 @RequestMapping("/users")

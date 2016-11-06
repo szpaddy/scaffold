@@ -13,7 +13,7 @@
 	<context:property-placeholder location="classpath:config.properties" />
 
 	<!-- 扫描注解的component及其子类, 排除spring-mvc相关的controller -->
-	<context:component-scan base-package="com.scaffold.core">
+	<context:component-scan base-package="${filter_base-package}">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController" />
 	</context:component-scan>
@@ -27,7 +27,7 @@
 	<!-- 扫描basePackage下所有指定的接口 -->
 	<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-		<property name="basePackage" value="com.scaffold.core" />
+		<property name="basePackage" value="${filter_base-package}" />
 	</bean>
 	<!-- ========================= MyBatis end ============================= -->
 
