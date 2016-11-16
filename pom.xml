@@ -7,25 +7,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SSM Scaffold</name>
 	<url>http://maven.apache.org</url>
-	<repositories>
-		<repository>
-			<id>oschina-repos</id>
-			<name>Oschina Releases</name>
-			<url>http://maven.oschina.net/content/groups/public</url>
-		</repository>
-		<repository>
-			<name>Oschina Repository</name>
-			<id>Oschina thirdparty</id>
-			<url>http://maven.oschina.net/content/repositories/thirdparty/</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>oschina-repos</id>
-			<name>Oschina Releases</name>
-			<url>http://maven.oschina.net/content/groups/public</url>
-		</pluginRepository>
-	</pluginRepositories>
 	<properties>
 		<!-- main version setting -->
 		<spring.version>4.0.8.RELEASE</spring.version>

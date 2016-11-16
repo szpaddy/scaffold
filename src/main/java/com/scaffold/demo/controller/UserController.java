@@ -23,9 +23,16 @@ public class UserController {
 		return userService.getUserList();
 	}
 
-	@RequestMapping(value = "getUserByUid/{userId}", method = RequestMethod.GET)
+	@RequestMapping(value = "getUserByUid/{userId}")
 	public User getUserByUid(@PathVariable("userId") String userId) {
 		return userService.getUserByUid(userId);
+	}
+
+	@RequestMapping(value = "txTest")
+	public void txTest() {
+		User user = new User(31, "aa", 10, "xx");
+		userService.addUser(user);
+		userService.addUser(user);
 	}
 
 }

@@ -16,5 +16,23 @@
 		select * from users where id=#{id}
 	</select>
 
-
+	<insert id="addUser"  parameterType="com.scaffold.common.vo.User">
+		insert into users(
+			id,name,age,address
+		) values(
+			#{id},#{name},#{age},#{adress}
+		)
+	</insert>
+	
+	<update id="editUser">
+		update users 
+		set name=#{name},
+			age=#{age},
+			adress=#{adress}
+		where id=#{id}
+	</update>
+	
+	<delete id="delUser">
+		delete users where id=#{id}
+	</delete>
 </mapper>

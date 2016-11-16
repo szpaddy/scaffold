@@ -25,4 +25,19 @@ public class UserService implements IUserService {
 		return userDao.getUserByUid(userId);
 	}
 
+	@Override
+	public void addUser(User user) {
+		userDao.addUser(user);
+	}
+
+	@Override
+	public void editUser(User user) {
+		userDao.editUser(user);
+	}
+
+	@Override
+	public void delUser(String userId) {
+		userDao.delUser(userId);
+	}
+
 }

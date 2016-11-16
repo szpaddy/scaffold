@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+
+	<description>Spring Core Configuration</description>
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder location="classpath:config.properties" />
+
+	<!-- 这里要把controler下面的 controller去除，他们是在spring-mvc.xml中配置的，如果不去除会影响事务管理的。 -->
+	<context:component-scan base-package="${filter_base-package}">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController" />
+	</context:component-scan>
+
+	<!-- Mybatis配置 -->
+	<import resource="classpath:spring/spring-mybatis.xml" />
+
+	<!-- 引入数据源配置 -->
+	<import resource="classpath:spring/spring-datasource.xml" />
+
+	<!-- 申明式事务配置 -->
+	<import resource="classpath:spring/spring-transaction.xml" />
+
+</beans>

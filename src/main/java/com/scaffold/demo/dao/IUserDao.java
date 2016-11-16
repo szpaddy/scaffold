@@ -8,7 +8,6 @@ import com.scaffold.common.vo.User;
 
 @Repository("userDao")
 public interface IUserDao {
-	public int checkUserExits(User user);
 
 	public void addUser(User user);
 
