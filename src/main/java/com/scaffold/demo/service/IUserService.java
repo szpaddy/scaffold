@@ -15,4 +15,8 @@ public interface IUserService {
 	public List<User> getUserList();
 
 	public User getUserByUid(String userId);
+
+	public void selfInjectDemo();
+
+	public void noTxDemo();
 }

@@ -20,7 +20,7 @@
 		insert into users(
 			id,name,age,address
 		) values(
-			#{id},#{name},#{age},#{adress}
+			#{id},#{name},#{age},#{address}
 		)
 	</insert>
 	

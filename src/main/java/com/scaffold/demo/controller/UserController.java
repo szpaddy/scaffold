@@ -6,7 +6,6 @@ import javax.annotation.Resource;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.scaffold.common.vo.User;
@@ -30,9 +29,13 @@ public class UserController {
 
 	@RequestMapping(value = "txTest")
 	public void txTest() {
-		User user = new User(31, "aa", 10, "xx");
+		User user = new User(32, "aa", 10, "xx");
 		userService.addUser(user);
-		userService.addUser(user);
+	}
+
+	@RequestMapping(value = "selfInjectDemo")
+	public void selfInjectDemo() {
+		userService.selfInjectDemo();
 	}
 
 }

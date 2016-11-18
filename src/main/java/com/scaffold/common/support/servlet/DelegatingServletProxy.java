@@ -1,4 +1,4 @@
-package com.scaffold.common.servlet;
+package com.scaffold.common.support.servlet;
 
 import java.io.IOException;
 
@@ -22,11 +22,11 @@ public class DelegatingServletProxy extends GenericServlet {
 
 	@Override
 	public void init() throws ServletException {
-		getServletBean();
+		initProxy();
 		proxy.init(getServletConfig());
 	}
 
-	private void getServletBean() {
+	private void initProxy() {
 		WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(getServletContext());
 		this.proxy = (Servlet) wac.getBean(getServletName());
 	}

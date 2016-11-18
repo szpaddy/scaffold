@@ -60,7 +60,7 @@
 
 	<servlet>
 		<servlet-name>environmentServlet</servlet-name>
-		<servlet-class>com.scaffold.common.servlet.DelegatingServletProxy</servlet-class>
+		<servlet-class>com.scaffold.common.support.servlet.DelegatingServletProxy</servlet-class>
 	</servlet>
 
 	<servlet-mapping>

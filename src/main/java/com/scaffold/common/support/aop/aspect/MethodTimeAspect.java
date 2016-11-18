@@ -1,4 +1,4 @@
-package com.scaffold.common.aop.aspect;
+package com.scaffold.common.support.aop.aspect;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -14,14 +14,21 @@ public class MethodTimeAspect {
 	private static final Logger logger = LoggerFactory.getLogger(MethodTimeAspect.class);
 
 	@Around("execution(* *..controller..*(..)) || execution(* *..service..*(..))")
-	public Object around(ProceedingJoinPoint joinPoint) {
+	public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 		Object result = null;
 		StopWatch clock = new StopWatch();
 		clock.start();
 		try {
 			result = joinPoint.proceed();
 		} catch (Throwable e) {
+			logMethodTimeInfo(joinPoint, clock);
+			throw e;
 		}
+		logMethodTimeInfo(joinPoint, clock);
+		return result;
+	}
+
+	private void logMethodTimeInfo(ProceedingJoinPoint joinPoint, StopWatch clock) {
 		clock.stop();
 
 		long time = clock.getTime();
@@ -31,6 +38,5 @@ public class MethodTimeAspect {
 		}
 
 		logger.debug(joinPoint.toLongString() + " Takes:" + timeInfo);
-		return result;
 	}
 }

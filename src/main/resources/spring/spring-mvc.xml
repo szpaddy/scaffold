@@ -13,7 +13,6 @@
 	<context:component-scan base-package="${filter_base-package}">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController" />
-		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
 	</context:component-scan>
 
 	<!-- 激活自动代理功能 -->

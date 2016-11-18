@@ -6,12 +6,16 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.scaffold.common.support.aop.tx.ISelfInject;
 import com.scaffold.common.vo.User;
 import com.scaffold.demo.dao.IUserDao;
 import com.scaffold.demo.service.IUserService;
 
 @Service
-public class UserService implements IUserService {
+public class UserService implements IUserService, ISelfInject {
+	// 解决Spring AOP在同一个类里自身方法相互调用时无法拦截问题
+	private IUserService self;
+
 	@Resource
 	private IUserDao userDao;
 
@@ -28,6 +32,7 @@ public class UserService implements IUserService {
 	@Override
 	public void addUser(User user) {
 		userDao.addUser(user);
+		userDao.addUser(user);
 	}
 
 	@Override
@@ -38,6 +43,28 @@ public class UserService implements IUserService {
 	@Override
 	public void delUser(String userId) {
 		userDao.delUser(userId);
+	}
+
+	@Override
+	public void selfInjectDemo() {
+		// 插入一条正常数据，也可能是日志或数据状态修改
+		// noTxDemo();// 最终结果noTxDemo操作的数据被回滚
+		self.noTxDemo();// 最终结果noTxDemo操作的数据不会被回滚
+
+		// 插入一条ID重复的异常数据
+		addUser(new User(30, "aa", 10, "xx"));
+
+	}
+
+	@Override
+	public void noTxDemo() {
+		// 不在事务中执行，执行后数据马上提交到数据库
+		userDao.addUser(new User(32, "aa", 10, "xx"));
+	}
+
+	@Override
+	public void setSelf(Object bean) {
+		self = (IUserService) bean;
 	}
 
 }
