@@ -1,4 +1,4 @@
-package com.scaffold.common.support.aop.tx;
+package com.scaffold.core.aop.tx;
 
 /**
  * Spring AOP在同一个类里自身方法相互调用时无法拦截。例如同一个类中有methodA和methodB,两个方法经过AOP代理,执行时都实现系统日志记录。单独使用methodA或methodB时，没有任何问题。

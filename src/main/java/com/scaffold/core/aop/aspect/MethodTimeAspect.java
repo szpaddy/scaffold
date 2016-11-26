@@ -1,4 +1,4 @@
-package com.scaffold.common.support.aop.aspect;
+package com.scaffold.core.aop.aspect;
 
 import org.apache.commons.lang3.time.StopWatch;
 import org.aspectj.lang.ProceedingJoinPoint;

@@ -6,8 +6,8 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.scaffold.common.support.aop.tx.ISelfInject;
 import com.scaffold.common.vo.User;
+import com.scaffold.core.aop.tx.ISelfInject;
 import com.scaffold.demo.dao.IUserDao;
 import com.scaffold.demo.service.IUserService;
 

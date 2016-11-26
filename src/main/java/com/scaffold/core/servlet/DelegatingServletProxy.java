@@ -1,4 +1,4 @@
-package com.scaffold.common.support.servlet;
+package com.scaffold.core.servlet;
 
 import java.io.IOException;
 

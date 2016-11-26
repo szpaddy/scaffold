@@ -1,4 +1,4 @@
-package com.scaffold.common.support.aop.tx.impl;
+package com.scaffold.core.aop.tx.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
-import com.scaffold.common.support.aop.tx.ISelfInject;
+import com.scaffold.core.aop.tx.ISelfInject;
 
 @Component
 public class SelfInjectBeanPostProcessor implements BeanPostProcessor {
