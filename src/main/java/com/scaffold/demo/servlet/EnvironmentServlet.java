@@ -15,10 +15,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.scaffold.common.utils.JsonUtil;
-import com.scaffold.common.vo.Environment;
-import com.scaffold.common.vo.Permission;
-import com.scaffold.common.vo.User;
-import com.scaffold.demo.service.IUserService;
+import com.scaffold.demo.service.IDemoService;
+import com.scaffold.demo.vo.Environment;
+import com.scaffold.demo.vo.Permission;
+import com.scaffold.demo.vo.User;
 
 @SuppressWarnings("serial")
 @Component
@@ -26,7 +26,7 @@ public class EnvironmentServlet extends HttpServlet {
 	private static final Logger logger = LoggerFactory.getLogger(EnvironmentServlet.class);
 
 	@Resource
-	private IUserService userService;
+	private IDemoService demoService;
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -53,7 +53,7 @@ public class EnvironmentServlet extends HttpServlet {
 	private Environment getEnvironmentInfo() {
 		Environment env = new Environment();
 
-		User user = userService.getUserByUid("1");
+		User user = demoService.getUserByUid("1");
 		env.setUser(user);
 
 		List<Permission> permissionList = new ArrayList<Permission>();

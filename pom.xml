@@ -10,6 +10,7 @@
 	<properties>
 		<!-- main version setting -->
 		<spring.version>4.0.8.RELEASE</spring.version>
+		<spring.shiro>1.2.3</spring.shiro>
 		<mybatis.version>3.2.8</mybatis.version>
 		<mybatis-spring.version>1.2.2</mybatis-spring.version>
 		<druid.version>1.0.11</druid.version>
@@ -118,6 +119,28 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-oxm</artifactId>
 			<version>${spring.version}</version>
+		</dependency>
+
+		<!-- spring shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>${spring.shiro}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>${spring.shiro}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${spring.shiro}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring</artifactId>
+			<version>${spring.shiro}</version>
 		</dependency>
 
 		<!-- AOP -->

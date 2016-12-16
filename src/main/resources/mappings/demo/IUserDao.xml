@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.scaffold.demo.dao.IUserDao">
-	<resultMap type="com.scaffold.common.vo.User" id="userMap">
+	<resultMap type="com.scaffold.demo.vo.User" id="userMap">
 		<id property="id" column="id" />
 		<result property="name" column="name" />
 		<result property="age" column="age" />
@@ -12,26 +12,26 @@
 		select * from users
 	</select>
 
-	<select id="getUserByUid" parameterType="string" resultType="com.scaffold.common.vo.User">
+	<select id="getUserByUid" parameterType="string" resultType="com.scaffold.demo.vo.User">
 		select * from users where id=#{id}
 	</select>
 
-	<insert id="addUser"  parameterType="com.scaffold.common.vo.User">
+	<insert id="addUser" parameterType="com.scaffold.demo.vo.User">
 		insert into users(
-			id,name,age,address
+		id,name,age,address
 		) values(
-			#{id},#{name},#{age},#{address}
+		#{id},#{name},#{age},#{address}
 		)
 	</insert>
-	
+
 	<update id="editUser">
-		update users 
+		update users
 		set name=#{name},
-			age=#{age},
-			adress=#{adress}
+		age=#{age},
+		adress=#{adress}
 		where id=#{id}
 	</update>
-	
+
 	<delete id="delUser">
 		delete users where id=#{id}
 	</delete>

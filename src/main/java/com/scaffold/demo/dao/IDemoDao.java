@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.scaffold.common.vo.User;
+import com.scaffold.demo.vo.User;
 
-@Repository("userDao")
-public interface IUserDao {
+@Repository
+public interface IDemoDao {
 
 	public void addUser(User user);
 

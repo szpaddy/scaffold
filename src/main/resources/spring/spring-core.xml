@@ -24,4 +24,7 @@
 	<!-- 申明式事务配置 -->
 	<import resource="classpath:spring/spring-transaction.xml" />
 
+	<!-- shiro配置 -->
+	<import resource="classpath:spring/spring-shiro.xml" />
+
 </beans>

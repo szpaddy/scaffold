@@ -6,18 +6,18 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.scaffold.common.vo.User;
 import com.scaffold.core.aop.tx.ISelfInject;
-import com.scaffold.demo.dao.IUserDao;
-import com.scaffold.demo.service.IUserService;
+import com.scaffold.demo.dao.IDemoDao;
+import com.scaffold.demo.service.IDemoService;
+import com.scaffold.demo.vo.User;
 
 @Service
-public class UserService implements IUserService, ISelfInject {
+public class DemoService implements IDemoService, ISelfInject {
 	// 解决Spring AOP在同一个类里自身方法相互调用时无法拦截问题
-	private IUserService self;
+	private IDemoService self;
 
 	@Resource
-	private IUserDao userDao;
+	private IDemoDao userDao;
 
 	@Override
 	public List<User> getUserList() {
@@ -64,7 +64,7 @@ public class UserService implements IUserService, ISelfInject {
 
 	@Override
 	public void setSelf(Object bean) {
-		self = (IUserService) bean;
+		self = (IDemoService) bean;
 	}
 
 }

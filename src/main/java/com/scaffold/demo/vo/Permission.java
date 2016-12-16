@@ -1,4 +1,4 @@
-package com.scaffold.common.vo;
+package com.scaffold.demo.vo;
 
 public class Permission {
 

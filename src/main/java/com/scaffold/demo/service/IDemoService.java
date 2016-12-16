@@ -2,9 +2,9 @@ package com.scaffold.demo.service;
 
 import java.util.List;
 
-import com.scaffold.common.vo.User;
+import com.scaffold.demo.vo.User;
 
-public interface IUserService {
+public interface IDemoService {
 
 	public void addUser(User user);
 
